@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" class="u-responsive-xl"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>ToZeMun: home</title>
+    <link rel="stylesheet" href="static/styles_.css" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="static/css_002.css">
+    <link id="u-page-google-font" rel="stylesheet" href="static/css.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <style class="u-style">.u-section-2 {background-image: url("static/img/background.jpeg"); background-position: 50% 50%}
+.u-section-2 .u-sheet-1 {min-height: 620px}
+.u-section-2 .u-group-1 {
+  width: 453px; min-height: 1000px; height: auto; margin: 0 0 0 auto
+}
+.u-section-2 .u-container-layout-1 {padding: 30px}
+.u-section-2 .u-text-1 {font-size: 3rem; text-transform: none; font-weight: 400;}
+.u-section-2 .u-text-2 {text-transform: uppercase; letter-spacing: 4px; font-size: 1.125rem; margin: 20px 0 0}
+.u-section-2 .u-text-3 {margin: 20px auto 0 0}
+.u-section-2 .u-btn-1 {border-style: solid; background-image: none; margin: 20px auto 0; padding: 10px 60px} 
+@media (max-width: 1199px){ .u-section-2 .u-sheet-1 {min-height: 511px} }
+@media (max-width: 991px){ .u-section-2 .u-sheet-1 {min-height: 391px} }
+@media (max-width: 767px){ .u-section-2 {background-position: 85.86% 50%}
+.u-section-2 .u-sheet-1 {min-height: 293px}
+.u-section-2 .u-container-layout-1 {padding-left: 10px; padding-right: 10px} }
+@media (max-width: 575px){ .u-section-2 .u-sheet-1 {min-height: 545px}
+.u-section-2 .u-group-1 {min-height: 545px; margin-right: initial; margin-left: initial; width: auto}
+.u-section-2 .u-text-1 {font-size: 2.25rem; margin-left: 21px; margin-right: 21px}
+.u-section-2 .u-text-3 {margin-right: 0} }</style>
+  
+</head>
+  <body class="u-body u-section-2">
+    
+    <section class="u-clearfix u-image">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <h2 class="u-text u-text-body-alt-color u-text-1">Home
+            </h2>
+            <h5 class="u-text u-text-body-alt-color u-text-2">Username: <b id="username"></b></h5>
+            <p id="infoBlock" class="u-text u-text-body-alt-color u-text-default u-text-3" style="margin-bottom: 20px">Your information is empty.&nbsp;</p>
+            <a id="requestButton" class="u-border-2 u-border-white u-btn u-btn-round u-button-style u-none u-radius-30 u-text-hover-white u-btn-1">send request</a>
+            <a id="codeButton" class="u-border-2 u-border-white u-btn u-btn-round u-button-style u-none u-radius-30 u-text-hover-white u-btn-1">show security code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="popupBackground" id="popupBackground">
+                <div class="popupContent" id="popupContent">
+                    <span class="closePopupButton" id="closePopupButton">&times;</span>
+                    <h2>Send request</h2>
+                    <form id="requestForm">
+                    <div class="rightText">
+                    <label for="fio">Full name:</label>
+                    <input class="inputField" type="text" id="fio" name="fio" required><br><br>
+                    
+                    <label for="passport">Passport:</label>
+                    <input class="inputField" type="text" id="passport" name="passport" required><br><br>
+                    </div>
+
+                    <a id="submitRequest" class="u-border-2 u-border-white u-btn u-btn-round u-button-style u-none u-radius-30 u-text-hover-white u-btn-1" type="submit">Submit request</a>
+                    </form>
+                </div>
+            </div>
+    <div class="popupBackground" id="popupBackgroundCode">
+                <div class="popupContent" id="popupContentCode">
+                    <span class="closePopupButton" id="closePopupButtonCode">&times;</span>
+                    <h2>Security code: <b id="codeField"></b></h2>
+                </div>
+            </div>
+</body>
+<script src="static/api.js"></script>
+<script src="static/home.js"></script>
+</html>

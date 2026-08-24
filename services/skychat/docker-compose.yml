@@ -1,0 +1,36 @@
+services:
+  skychat:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "31337:18080"
+    networks:
+      - app_db
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:17-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d db"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - app_db
+
+networks:
+  app_db:
+    driver: bridge
+
+volumes:
+  postgres_data:
